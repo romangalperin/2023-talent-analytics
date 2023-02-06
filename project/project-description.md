@@ -1,4 +1,4 @@
-2022 People analytics project
+2023 Talent analytics project
 ================
 
 ## Context
@@ -74,11 +74,11 @@ report (no longer than 10 pages including all figures table and
 references, if any). Your analysis will focus on one or more of the
 following questions:
 
--   What are the organizational and social factors associated with the
-    length of patent application prosecution?
--   What influences promotion and exit of patent examiners?
--   What is the role of gender, race and ethnicity in the processes
-    described in the questions above?
+- What are the organizational and social factors associated with the
+  length of patent application prosecution?
+- What influences promotion and exit of patent examiners?
+- What is the role of gender, race and ethnicity in the processes
+  described in the questions above?
 
 Your report should offer convincing analysis, as well as projections and
 related recommendations.
@@ -101,11 +101,11 @@ package.
 
 Other packages I recommend for working with the data:
 
--   `lubridate` for working with dates
--   `stringr` for working with character strings
--   `skimr` for quick summaries of data columns
--   `gender` for inferring gender from name (there are other options)
--   `wru` for predicting race/ethnicity based on name
+- `lubridate` for working with dates
+- `stringr` for working with character strings
+- `skimr` for quick summaries of data columns
+- `gender` for inferring gender from name (there are other options)
+- `wru` for predicting race/ethnicity based on name
 
 ### Patent applications
 
@@ -116,16 +116,15 @@ The full data file takes between 0.5Gb and 1Gb of memory, depending on
 how you load it, so I have created a smaller subsample of the data for
 your convenience, using the following restrictions:
 
--   The year of `filing_date` is 2000 or later
--   Only 4 of the 9 [Technology
-    Centers](https://www.uspto.gov/patents/contact-patents/patent-technology-centers-management)
-    comprising the agency are included: 1600, 1700, 2100 and 2400
--   Only 15 relevant variables are included (see [PatEx data
-    dictionary](https://www.uspto.gov/sites/default/files/documents/Appendix%20A.pdf))
+- The year of `filing_date` is 2000 or later
+- Only 4 of the 9 [Technology
+  Centers](https://www.uspto.gov/patents/contact-patents/patent-technology-centers-management)
+  comprising the agency are included: 1600, 1700, 2100 and 2400
+- Only 15 relevant variables are included (see [PatEx data
+  dictionary](https://www.uspto.gov/sites/default/files/documents/Appendix%20A.pdf))
 
 ``` r
-app_data_sample %>%
-  tbl_vars()
+app_data_sample |> tbl_vars()
 ```
 
     ## <dplyr:::vars>
@@ -141,21 +140,21 @@ app_data_sample %>%
 Additional data on patent examiners come from FOIA requests made with
 the agency by various researchers. The data components are:
 
--   **examiner_gs.csv** contains data on examiner GS pay grade changes
+- **examiner_gs.csv** contains data on examiner GS pay grade changes
 
 ``` r
-examiner_gs %>% tbl_vars()
+examiner_gs |> tbl_vars()
 ```
 
     ## <dplyr:::vars>
     ## [1] "examiner_name"  "examiner_grade" "start_date"     "end_date"      
     ## [5] "old_pid"        "new_pid"
 
--   **examiner_ids.csv** is a crosswalk table to link to the
-    applications data
+- **examiner_ids.csv** is a crosswalk table to link to the applications
+  data
 
 ``` r
-examiner_ids %>% tbl_vars()
+examiner_ids |> tbl_vars()
 ```
 
     ## <dplyr:::vars>

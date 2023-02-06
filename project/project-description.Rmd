@@ -1,5 +1,5 @@
 ---
-title: "2022 People analytics project"
+title: "2023 Talent analytics project"
 output: github_document
 ---
 
@@ -15,7 +15,7 @@ library(arrow)
 set.seed(10101)
 
 ##### paths -----
-data_path = "~/Dropbox/McGill/teaching/2021-2022/2022_summer/ORGB672/data/"
+data_path = "~/Dropbox/McGill/teaching/2022-2023/ORGB671/data/"
 app_data_sample <- read_parquet(paste0(data_path,"app_data_sample.parquet"))
 examiner_gs <- read_csv(paste0(data_path,"examiner_gs.csv"))
 examiner_ids <- read_csv(paste0(data_path,"examiner_ids.csv"))
@@ -78,8 +78,7 @@ The largest data file is on patent applications. It comes from the [USPTO 2016 P
 + Only 15 relevant variables are included (see [PatEx data dictionary](https://www.uspto.gov/sites/default/files/documents/Appendix%20A.pdf))
 
 ```{r applications, skimr_include_summary = TRUE}
-app_data_sample %>%
-  tbl_vars()
+app_data_sample |> tbl_vars()
 ```
 
 ### Examiners
@@ -87,12 +86,12 @@ Additional data on patent examiners come from FOIA requests made with the agency
 
 + **examiner_gs.csv** contains data on examiner GS pay grade changes
 ```{r}
-examiner_gs %>% tbl_vars()
+examiner_gs |> tbl_vars()
 ```
 
 + **examiner_ids.csv** is a crosswalk table to link to the applications data
 ```{r}
-examiner_ids %>% tbl_vars()
+examiner_ids |> tbl_vars()
 ```
 
 
