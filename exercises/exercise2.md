@@ -7,7 +7,7 @@ We first need to do a few things before we can manipulate the data.
 
 ``` r
 # set path for R to find our data
-data_path <- "~/Dropbox/McGill/teaching/2021-2022/2022_summer/ORGB672/data/"
+data_path = "~/Dropbox/McGill/teaching/2022-2023/ORGB671/data/"
 ```
 
 ## 1. Load data
@@ -156,8 +156,8 @@ gc()
 ```
 
     ##            used  (Mb) gc trigger  (Mb) limit (Mb) max used  (Mb)
-    ## Ncells  4561904 243.7    8493217 453.6         NA  4958987 264.9
-    ## Vcells 49597370 378.4   92555091 706.2      32768 79913192 609.7
+    ## Ncells  4561934 243.7    8493321 453.6         NA  4959017 264.9
+    ## Vcells 49597470 378.4   92555264 706.2      32768 79913262 609.7
 
 ### Guess the examiner’s race
 
@@ -280,8 +280,8 @@ gc()
 ```
 
     ##            used  (Mb) gc trigger  (Mb) limit (Mb) max used  (Mb)
-    ## Ncells  4976862 265.8    8493217 453.6         NA  8493217 453.6
-    ## Vcells 53394144 407.4   92555091 706.2      32768 92058431 702.4
+    ## Ncells  4976892 265.8    8493321 453.6         NA  8493321 453.6
+    ## Vcells 53394244 407.4   92555264 706.2      32768 92058506 702.4
 
 ### Examiner’s tenure
 
@@ -381,8 +381,15 @@ gc()
 ```
 
     ##            used  (Mb) gc trigger   (Mb) limit (Mb)  max used   (Mb)
-    ## Ncells  4990788 266.6   15668609  836.8         NA  15668609  836.8
-    ## Vcells 65772432 501.9  133455330 1018.2      32768 133361290 1017.5
+    ## Ncells  4990818 266.6   15668806  836.9         NA  15668806  836.9
+    ## Vcells 65772532 501.9  133455579 1018.2      32768 133361390 1017.5
+
+Finally, let’s write out the applications file with all the added
+fields, so that we can use it in subsequent exercises.
+
+``` r
+write_parquet(app_data_sample, paste0(data_path,"apps_gender_rate.parquet"))
+```
 
 ## 3. Descriptive statistics
 

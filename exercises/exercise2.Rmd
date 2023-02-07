@@ -16,7 +16,7 @@ library(tidyverse)
 We first need to do a few things before we can manipulate the data. 
 ```{r setup-2}
 # set path for R to find our data
-data_path <- "~/Dropbox/McGill/teaching/2021-2022/2022_summer/ORGB672/data/"
+data_path = "~/Dropbox/McGill/teaching/2022-2023/ORGB671/data/"
 ```
 
 
@@ -188,6 +188,14 @@ app_data_sample <- app_data_sample %>%
 
 rm(examiner_dates)
 gc()
+```
+
+Finally, let's write out the applications file with all the added fields, so that we can use it in subsequent exercises.
+
+```{r save-data}
+
+write_parquet(app_data_sample, paste0(data_path,"apps_gender_rate.parquet"))
+
 ```
 
 
